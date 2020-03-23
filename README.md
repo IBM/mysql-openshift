@@ -1,7 +1,7 @@
 # mysql-openshift
 This tutorial shows how to create a MySQL instance onto an existing Red Hat OpenShift cluster on IBM Cloud and integrate it to your microservices-based application, which is also deployed on Red Hat OpenShift.
 
-The first step is to create a MySQL
+The first step is to create a MySQL instance from the webconsole.
 
 ## Create a new project
 `oc new-project mysql-test`  
