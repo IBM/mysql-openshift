@@ -8,15 +8,14 @@ CORS(app)
 
 
 
-USER = os.getenv('DB_USER')
-PASSWORD = os.environ.get('DB_PASSWORD')
-HOST = os.environ.get('DB_HOST')
-DATABASE = os.getenv('DB_DATABASE')
+USER = os.getenv('MYSQL_USER')
+PASSWORD = os.environ.get('MYSQL_PASSWORD')
+HOST = os.environ.get('MYSQL_HOST')
+DATABASE = os.getenv('MYSQL_DATABASE')
 
 try:
     mydb = mysql.connector.connect(
     host=str(HOST),
-    port=PORT,
     user=str(USER),
     passwd=str(PASSWORD),
     db = str(DATABASE)
