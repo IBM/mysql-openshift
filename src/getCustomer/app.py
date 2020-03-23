@@ -30,7 +30,7 @@ except Exception as e:
 
 @app.route('/')
 def home():
-    return 'getCustomer version 1'
+    return 'getCustomer version 1.1'
 
 @app.route('/customer/<id>')
 def getCustomer(id):
