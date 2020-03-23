@@ -36,7 +36,7 @@ def home():
 def getCustomer(id):
     sql = "SELECT * FROM customer WHERE id = %(id)s"
     try:
-        mycursor.execute(sql,{ 'id': id })
+        mycursor.execute(sql,{ 'id': str(id) })
         columns = mycursor.column_names
         myresult = mycursor.fetchall()
         json_data=[]
