@@ -4,9 +4,10 @@ from flask import Flask,request,render_template
 from flask_cors import CORS
 import json
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-
+cors = CORS(app, resources={r"/customers": {"origins": "http://localhost:3000"}})
 
 USER = os.getenv('MYSQL_USER')
 PASSWORD = os.environ.get('MYSQL_PASSWORD')
@@ -25,7 +26,6 @@ try:
 except Exception as e:
     print("could not connect to Database")
     print(str(e))
-CORS(app)
 
 @app.route('/')
 def home():
@@ -34,6 +34,7 @@ def home():
     return response
 
 @app.route('/customers',methods=['GET'])
+@cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
 def getCustomerList():
     sql = "select id, customerName from customer ORDER BY customerName, id"
     try:
