@@ -4,7 +4,7 @@ from flask import Flask,request,render_template
 from flask_cors import CORS
 import json
 app = Flask(__name__)
-CORS(app)
+
 
 
 
@@ -25,7 +25,7 @@ try:
 except Exception as e:
     print("could not connect to Database")
     print(str(e))
-
+CORS(app)
 
 @app.route('/')
 def home():
@@ -33,7 +33,7 @@ def home():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
-@app.route('/customers')
+@app.route('/customers',methods=['GET'])
 def getCustomerList():
     sql = "select id, customerName from customer ORDER BY customerName, id"
     try:
