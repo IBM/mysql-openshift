@@ -44,9 +44,9 @@ def getCustomer(id):
             json_data.append(dict(zip(columns,result)))
 
         print(json_data)
-        return json.dumps(json_data[0],default=str)
+      
     except Exception as e:
         return "Could not retrieve records from DB: " + str(e)
 
-
+    return json.dumps(json_data[0],default=str)
 app.run("0.0.0.0","8080")
