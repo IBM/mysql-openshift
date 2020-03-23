@@ -29,7 +29,9 @@ except Exception as e:
 
 @app.route('/')
 def home():
-    return 'Welcome to getCustomerList version 1'
+    response = 'Welcome to getCustomerList version 1'
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route('/customers')
 def getCustomerList():
@@ -43,7 +45,10 @@ def getCustomerList():
             json_data.append(dict(zip(columns,result)))
 
         print(json_data)
-        return json.dumps(json_data,default=str)
+        response = json.dumps(json_data,default=str)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+
+        return response
     except Exception as e:
         return "Could not retrieve records from DB: " + str(e)
 
