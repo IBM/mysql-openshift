@@ -43,7 +43,8 @@ def getCustomerList():
 
         print(json_data)
         response = json.dumps(json_data,default=str)
-
+        print("response: ")
+        print(response)
         return response
     except Exception as e:
         return "Could not retrieve records from DB: " + str(e)
