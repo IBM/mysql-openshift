@@ -1,6 +1,11 @@
 
+# For Creating a new table.
 
+USE sampledb; 
+DROP TABLE IF EXISTS customer; 
+CREATE TABLE IF NOT EXISTS customer ( id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, customerName VARCHAR( 255 ) NOT NULL, effectiveDate VARCHAR( 255 ), description TEXT, status VARCHAR( 255 ) NOT NULL );
 
-USE sampledb; DROP TABLE IF EXISTS customer; CREATE TABLE IF NOT EXISTS customer ( id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, customerName VARCHAR( 255 ) NOT NULL, effectiveDate VARCHAR( 255 ), description TEXT, status VARCHAR( 255 ) NOT NULL );
+# For inserting dummy data in table.
 
-USE sampledb; INSERT INTO customer VALUES (1,'Testers Inc.','2020-04-01','Testers are who we hire to test our software','active'), (2,'Deployers CO','2019-06-01','Deployers co. deploy our software','active'), (3,'DJ John Doe','2019-12-01','John provides the music for our annual holiday party.',"active"), (4,'Doe Hypermarket','2019-06-05','Doe is where we purchase all food supply.',"active");
+USE sampledb; INSERT INTO customer VALUES (1,'Testers Inc.','2020-04-01','Testers are who we hire to test our software','active'), (2,'Deployers CO','2019-06-01','Deployers co. deploy our software','active'), (3,'DJ John Doe','2019-12-01','John provides the music for our annual holiday party.',"active"), (4,'Doe Hypermarket','2019-06-05','Doe is where we purchase all food supply.',"active");
+
