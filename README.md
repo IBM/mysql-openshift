@@ -86,7 +86,7 @@ Ephemeral basically means that the database is stateless, meaning all the data s
 
 ## 4. Expose the getCustomerList service
 
-`oc expose service getcustomersummarylist --insecure-skip-tls-verify=false`
+`oc expose service getcustomerlist --insecure-skip-tls-verify=false`
 
 ## 5. Get the two services' routes
 `oc get routes`
