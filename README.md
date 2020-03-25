@@ -1,4 +1,4 @@
-# mysql-openshift
+# Create a MySQL database on Red Hat Openshift on IBM Cloud and link it to your microservices application.
 
 This tutorial can teach you how to create a MySQL instance on Red Hat OpenShift on IBM Cloud and integrate it to your microservices-based application, which is also deployed on Red Hat OpenShift.
 
