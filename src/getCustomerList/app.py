@@ -4,10 +4,7 @@ from flask import Flask,request,render_template
 from flask_cors import CORS
 import json
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-
-
-cors = CORS(app, resources={r"/customers": {"origins": "http://localhost:3000"}})
+cors = CORS(app)
 
 USER = os.getenv('MYSQL_USER')
 PASSWORD = os.environ.get('MYSQL_PASSWORD')
@@ -34,7 +31,6 @@ def home():
     return response
 
 @app.route('/customers',methods=['GET'])
-@cross_origin(origin='localhost',headers=['Content-Type','Authorization'])
 def getCustomerList():
     sql = "select id, customerName from customer ORDER BY customerName, id"
     try:
@@ -47,7 +43,6 @@ def getCustomerList():
 
         print(json_data)
         response = json.dumps(json_data,default=str)
-        response.headers.add('Access-Control-Allow-Origin', '*')
 
         return response
     except Exception as e:
