@@ -1,8 +1,7 @@
 import os
 import mysql.connector
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,jsonify
 from flask_cors import CORS
-import json
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -27,7 +26,6 @@ except Exception as e:
 @app.route('/')
 def home():
     response = 'Welcome to getCustomerList version 1'
-    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 @app.route('/customers',methods=['GET'])
@@ -42,7 +40,7 @@ def getCustomerList():
             json_data.append(dict(zip(columns,result)))
 
         print(json_data)
-        response = json.dumps(json_data,default=str)
+        response = jsonify(json_data)
         print("response: ")
         print(response)
         return response
