@@ -7,10 +7,10 @@ Note: This tutorial assumes you already have a provisioned OpenShift cluster. Yo
 
 The tutorial is divided into 2 main parts:
 
-1. **Creating a new MySQL instance, and adding data to the database.**
+1. **[Creating a new MySQL instance and adding data to the database](#creating-a-new-mysql-instance-and-adding-data-to-the-database)**
 2. **Deploying a microservices-based application and integrating it to our database:**
 
-[UP](#end-here)
+# Creating a new MySQL instance and adding data to the database.
 The first step is to create a MySQL instance from the webconsole.
 
 ## Create a new project
