@@ -94,7 +94,7 @@ Ephemeral basically means that the database is stateless, meaning all the data s
 ## 5. Create the service "customerui"
 This will pull a container image from Docker Hub. This is being done to showcase the versatility of the OpenShift application build feature.
 #### Note: The variables 'REACT_APP_CUSTOMER_LIST_URI' and 'REACT_APP_CUSTOMER_URI' are determined by the values returned from the previous step 
-`oc new-app --name customerui --docker-image=docker.io/mohamed7sherif/mysql-react:latest -e REACT_APP_CUSTOMER_LIST_URI=<getcustomerlist_SERVICE_URI> -e REACT_APP_CUSTOMER_URI=<getcustomer_SERVICE_URI>`
+`oc new-app --name customerui --docker-image=docker.io/mohamed7sherif/mysql-react:latest -e REACT_APP_CUSTOMER_LIST_URI=<getcustomerlist_SERVICE_URI/customers> -e REACT_APP_CUSTOMER_URI=<getcustomer_SERVICE_URI>/customer/`
 
 ## Expose the customerui web site
 `oc expose service customerui --insecure-skip-tls-verify=false`
