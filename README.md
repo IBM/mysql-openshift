@@ -23,6 +23,7 @@ or from the web console:
 Ephemeral basically means that the database is stateless, meaning all the data stored would be lost if the pod carrying the database is restarted/deleted. This is usually used for testing/development. The other option is to choose **MySQL** from the catalog which adds persistent volume storage to our project but it is out of scope of this tutorial.
 
 2. After choosing MySQL(Ephemeral) from the catalog, enter a new *MySQL Connection Username*, *MySQL Connection Password*, and *MySQL root user Password*. These are the credentials that will be used to access the database later along with the *Database Service Name* and *MySQL Database Name*. The service takes around a minute to provision.
+![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-25%20at%2011.42.50%20PM.png "service")
 
 3. Now that we have our MySQL service ready. The next step is to populate the database. We will show you two ways to do that.
 
