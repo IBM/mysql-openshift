@@ -16,7 +16,7 @@ The first step is to create a new project using the command:
 `oc new-project mysql-project`
 
 or from the web console:
-*Insert Image here*
+![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screenshot_2020-03-25%20OpenShift%20Web%20Console.png "Web console")
 
 
 1. Next, it is time to create a MySQL instance from the web console by choosing **MySQL(Ephemeral)** from the catalog. 
@@ -33,6 +33,7 @@ Ephemeral basically means that the database is stateless, meaning all the data s
         - Copy the name of the pod which contains mysql as shown above and execute this command: 
             `oc rsh <POD_NAME>`
         - Now that we are inside the pod, it is time to add some data to our database. Run `mysql -u  <ENTER_MYSQL_USERNAME> -p`
+          ![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-26%20at%202.31.05%20AM.png "Pods")
         - once you are logged in, execute the following query to create a new table: 
         
         `USE sampledb; DROP TABLE IF EXISTS customer; CREATE TABLE IF NOT EXISTS customer ( id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, customerName VARCHAR( 255 ) NOT NULL, effectiveDate VARCHAR( 255 ), description TEXT, status VARCHAR( 255 ) NOT NULL );`
@@ -48,20 +49,24 @@ Ephemeral basically means that the database is stateless, meaning all the data s
       * Another way to populate the database is by using a Database Management tool like *MySQL Workbench* on your host machine. This is done by forwarding the port in the pod that carries the mysql server to a port on your local machine.
         - Go to your terminal and execute the following command:
             `oc get pods`
-            Insert image here
+           
         - Copy the name of the pod which contains mysql as shown above and execute this command: 
             `oc port-forward <POD_NAME> :3306`
             This will allocate a free port on your local machine to host the mysql server from the pod.
+            ![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-26%20at%2012.51.05%20AM.png "Pods")
         - Open *MySQL Workbench* and add a new connection using your database credentials and the allocated port to your localhost.
-        *INSERT PICTURE*
+          ![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-26%20at%2012.53.12%20AM.png "workbench")
         
         - once connected, execute the following query to create a new table: 
         
         `USE sampledb; DROP TABLE IF EXISTS customer; CREATE TABLE IF NOT EXISTS customer ( id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, customerName VARCHAR( 255 ) NOT NULL, effectiveDate VARCHAR( 255 ), description TEXT, status VARCHAR( 255 ) NOT NULL );`
         - Then execute this to add data to the table: 
-        
+         
         
         `USE sampledb; INSERT INTO customer VALUES (1,'Testers Inc.','2020-04-01','Testers are who we hire to test our software','active'), (2,'Deployers CO','2019-06-01','Deployers co. deploy our software','active'), (3,'DJ John Doe','2019-12-01','John provides the music for our annual holiday party.',"active"), (4,'Doe Hypermarket','2019-06-05','Doe is where we purchase all food supply.',"active");`
+        
+          -  ![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-26%20at%2012.54.42%20AM.png "workbench") 
+        
 
 
 
@@ -90,6 +95,10 @@ Ephemeral basically means that the database is stateless, meaning all the data s
 
 ## 5. Get the two services' routes
 `oc get routes`
+
+![alt text](https://github.com/MohameddSheriff/mysql-openshift/blob/master/images/Screen%20Shot%202020-03-26%20at%201.32.39%20AM.png
+ "routes") 
+        
 
 ## 5. Create the service "customerui"
 This will pull a container image from Docker Hub. This is being done to showcase the versatility of the OpenShift application build feature.
