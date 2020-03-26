@@ -110,9 +110,8 @@ This will pull a container image from Docker Hub. This is being done to showcase
 `oc expose service customerui --insecure-skip-tls-verify=false`
 
 ## Test it
-Check that all pods are ready using
+Check that all pods are ready using: `oc get pods` 
 
-`oc get pods` 
 Get the route, then open it in your browser:  
 
 `oc get routes`
