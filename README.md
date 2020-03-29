@@ -7,10 +7,11 @@ This tutorial is a step-by-step guide to teach you how to create a MySQL instanc
 
 1. [Introduction](#create-a-mysql-database-on-red-hat-openshift-on-ibm-cloud-and-link-it-to-your-microservices-application)
 2. [Prerequisites](#prerequisites)
-3. [Steps](#steps)
+3. [Estimated time](#estimated-time)
+4. [Steps](#steps)
      * [Creating a new MySQL instance and adding data to the database](#creating-a-new-mysql-instance-and-adding-data-to-the-database)
      * [Deploying a microservices-based application and integrating it to our database](#deploying-a-microservices-based-application-and-integrating-it-to-our-database)
-4. [Summary](Summary)
+5. [Summary](Summary)
 
 
 # Prerequisites
@@ -19,10 +20,12 @@ This tutorial is a step-by-step guide to teach you how to create a MySQL instanc
 3. OpenShift CLI [tool](https://www.okd.io/download.html)
 4. Basic SQL knowledge.
 
+# Estimated time
+
+This tutorial takes approximately 45 minutes to be completed.
 
 # Steps
 
-This tutorial takes approximately 45 minutes to be completed.
 
 The tutorial is divided into 2 main parts:
 1. **[Creating a new MySQL instance and adding data to the database](#creating-a-new-mysql-instance-and-adding-data-to-the-database)**
