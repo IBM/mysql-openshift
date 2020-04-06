@@ -1,5 +1,6 @@
 # Create a MySQL database on Red Hat Openshift on IBM Cloud and link it to your microservices application.
 
+Typically, deploying your database to an online server is not as easy as it sounds. It takes a lot of configuration to get it done and integrate it to your application. Fortunately, Red Hat OpenShift comes in place to make life easier with just few clicks! 
 This tutorial is a step-by-step guide to teach you how to create a MySQL instance on Red Hat OpenShift on IBM Cloud and integrate it to your microservices-based application, which is also deployed on Red Hat OpenShift. The tutorial is intended for anyone who spends lots of effort deploying, managing, updating, and monitoring their application and is interested in microservices in general. After completing the steps below, you should have a microservices-based application for viewing the list of customers and each customer's details all gathered from the database.
 
 
@@ -141,4 +142,4 @@ Copy the route named *customerui* and paste it in your browser to make sure the 
 
 # Summary
 
-This tutorial showed us how easy it is provision a MySQL instance on Red Hat OpenShift on IBM Cloud and how to populate the database using different methods. The tutorial also walked us through deploying microservices to OpenShift and integrate many services together, including our database.
+As we have seen throughout the tutorial, a lot of steps and configurations were cut off and replaced with few clicks, showing us how easy it is provision a MySQL instance on Red Hat OpenShift on IBM Cloud and how to populate the database using different methods. The tutorial also walked us through deploying microservices to OpenShift and integrating many services together, including our database.
