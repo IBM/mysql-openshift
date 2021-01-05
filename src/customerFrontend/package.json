@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pure-lifecycle": "^3.0.0",
